@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커피 공식이 바뀐다: 글로벌 아이스커피 트렌드 리포트</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            50: '#FFF8E7',
+                            100: '#F5EBE1',
+                            200: '#E8D7C3',
+                            300: '#D7CCC8',
+                            400: '#A1887F',
+                            500: '#8D6E63',
+                            600: '#6D4C41',
+                            700: '#5D4037',
+                            800: '#4E342E',
+                            900: '#3E2723',
+                            950: '#231410',
+                        },
+                        ice: {
+                            50: '#E0F7FA',
+                            100: '#B2EBF2',
+                            400: '#00BCD4',
+                            500: '#0097A7',
+                            600: '#00838F',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1A0F0C;
+            color: #FFF8E7;
+            font-family: 'Noto Sans KR', sans-serif;
+            overflow: hidden;
+        }
+
+        /* 800px Scroll Container Custom Styling */
+        .custom-scroll {
+            scroll-behavior: smooth;
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(62, 39, 35, 0.4);
+            border-radius: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #A1887F 0%, #00838F 100%);
+            border-radius: 8px;
+        }
+
+        .glass-card {
+            background: rgba(62, 39, 35, 0.65);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(215, 204, 200, 0.15);
+        }
+
+        .glass-card-light {
+            background: rgba(255, 248, 231, 0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bar-fill {
+            transition: width 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-2 sm:p-4 bg-gradient-to-br from-[#150B08] via-[#231410] to-[#111A1C]">
+
+    <!-- Main Outer Frame Fixed at Exactly 800px Height -->
+    <div class="w-full max-w-4xl h-[800px] max-h-[96vh] glass-card rounded-3xl shadow-2xl flex flex-col overflow-hidden relative border border-coffee-600/40">
+        
+        <!-- Header (Fixed Top) -->
+        <header class="flex-none px-6 py-4 border-b border-coffee-700/50 flex items-center justify-between bg-coffee-950/90 backdrop-blur-md z-30">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-coffee-600 to-ice-600 flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-mug-hot text-white text-sm"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base sm:text-lg text-coffee-50 tracking-tight flex items-center gap-2">
+                        커피 공식이 바뀐다
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-ice-600/30 text-ice-100 font-semibold border border-ice-500/40">SPECIAL REPORT</span>
+                    </h1>
+                    <p class="text-[11px] text-coffee-300/80">유럽을 뒤흔든 아이스커피 열풍 & K-커피 문화</p>
+                </div>
+            </div>
+
+            <!-- Quick Jump Indicator Dots -->
+            <div class="hidden sm:flex items-center space-x-2 text-xs text-coffee-300">
+                <a href="#sec-1" class="hover:text-ice-400 transition-colors px-1.5 py-0.5">01 급증</a>
+                <span>·</span>
+                <a href="#sec-2" class="hover:text-ice-400 transition-colors px-1.5 py-0.5">02 대중화</a>
+                <span>·</span>
+                <a href="#sec-3" class="hover:text-ice-400 transition-colors px-1.5 py-0.5">03 원인</a>
+                <span>·</span>
+                <a href="#sec-4" class="hover:text-ice-400 transition-colors px-1.5 py-0.5">04 한국</a>
+                <span>·</span>
+                <a href="#sec-5" class="hover:text-ice-400 transition-colors px-1.5 py-0.5">05 변화</a>
+            </div>
+        </header>
+
+        <!-- Continuous Vertical Scrollable Viewport -->
+        <main class="flex-1 overflow-y-auto custom-scroll p-4 sm:p-7 space-y-8 relative">
+
+            <!-- BACKGROUND VISUAL ACCENT -->
+            <div class="absolute inset-0 pointer-events-none opacity-15 z-0" style="background: radial-gradient(circle at 80% 20%, #00838F 0%, transparent 40%), radial-gradient(circle at 10% 80%, #6D4C41 0%, transparent 50%);"></div>
+
+            <!-- ==================== SECTION 01 ==================== -->
+            <section id="sec-1" class="relative z-10 pt-1">
+                <div class="flex items-center gap-2 text-xs font-semibold text-ice-400 uppercase tracking-widest mb-1.5">
+                    <span class="w-6 h-6 rounded-full bg-ice-600/20 flex items-center justify-center border border-ice-500/30">01</span>
+                    유럽서 판매 급증
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white leading-tight mb-3">
+                    에스프레소만 마시던 유럽인들,<br class="hidden sm:inline"/>
+                    요즘은 <span class="text-transparent bg-clip-text bg-gradient-to-r from-ice-100 via-ice-400 to-coffee-200">'아이스커피'</span>
+                </h2>
+                <p class="text-xs sm:text-sm text-coffee-300/90 leading-relaxed mb-4">
+                    따뜻한 커피가 익숙했던 유럽 전역에서 아이스커피 판매량이 가파른 상승 곡선을 그리고 있습니다.
+                </p>
+
+                <!-- Visual Grid & Graph Card -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                    
+                    <!-- Flat White Art Representation -->
+                    <div class="md:col-span-5 glass-card-light rounded-2xl p-4 flex flex-col items-center justify-center text-center border border-coffee-400/20">
+                        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-coffee-300 via-coffee-600 to-coffee-900 p-1 shadow-xl mb-3 relative">
+                            <div class="w-full h-full rounded-full border-2 border-coffee-100/30 bg-coffee-800/90 flex items-center justify-center">
+                                <!-- Flat White Heart Art SVG -->
+                                <svg class="w-12 h-12 text-coffee-50 opacity-90" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </div>
+                            <span class="absolute bottom-0 right-0 bg-ice-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow">ICE FLAT WHITE</span>
+                        </div>
+                        <h4 class="text-xs font-bold text-coffee-100">카페 바리스타 추천 메뉴 변화</h4>
+                        <p class="text-[11px] text-coffee-300/80 mt-1">에스프레소 베이스에 얼음과 부드러운 우유 폼을 올린 아이스 음료 인기 폭발</p>
+                    </div>
+
+                    <!-- European Countries Stats -->
+                    <div class="md:col-span-7 glass-card rounded-2xl p-4 space-y-2.5">
+                        <div class="flex justify-between items-center text-xs text-coffee-300 font-semibold pb-1 border-b border-coffee-700/50">
+                            <span>국가별 전년 대비 판매 증가율</span>
+                            <span class="text-[10px] text-ice-400">2~8월 조사 데이터</span>
+                        </div>
+
+                        <!-- Netherlands -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-white">🇳🇱 네덜란드</span>
+                                <span class="text-ice-400 font-extrabold">44% ↑</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-coffee-950 rounded-full overflow-hidden">
+                                <div class="bar-fill h-full bg-gradient-to-r from-coffee-500 to-ice-400 rounded-full" style="width: 44%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- UK -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-white">🇬🇧 영국</span>
+                                <span class="text-ice-400 font-extrabold">39% ↑</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-coffee-950 rounded-full overflow-hidden">
+                                <div class="bar-fill h-full bg-gradient-to-r from-coffee-500 to-ice-400 rounded-full" style="width: 39%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- France -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-white">🇫🇷 프랑스</span>
+                                <span class="text-ice-400 font-extrabold">20% ↑</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-coffee-950 rounded-full overflow-hidden">
+                                <div class="bar-fill h-full bg-gradient-to-r from-coffee-500 to-ice-400 rounded-full" style="width: 20%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Germany -->
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-white">🇩🇪 독일</span>
+                                <span class="text-ice-400 font-extrabold">19% ↑</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-coffee-950 rounded-full overflow-hidden">
+                                <div class="bar-fill h-full bg-gradient-to-r from-coffee-500 to-ice-400 rounded-full" style="width: 19%;"></div>
+                            </div>
+                        </div>
+
+                        <p class="text-[10px] text-coffee-400 text-right pt-1">* 출처: 룩셈부르크 시장조사업체 파이어(Fyre)</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="border-coffee-800/60 my-6"/>
+
+            <!-- ==================== SECTION 02 ==================== -->
+            <section id="sec-2" class="relative z-10">
+                <div class="flex items-center gap-2 text-xs font-semibold text-ice-400 uppercase tracking-widest mb-1.5">
+                    <span class="w-6 h-6 rounded-full bg-ice-600/20 flex items-center justify-center border border-ice-500/30">02</span>
+                    틈새에서 대중으로
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
+                    젊은 층을 넘어 <span class="text-ice-400">전 세대의 일상</span>으로
+                </h2>
+                <p class="text-xs sm:text-sm text-coffee-300/90 leading-relaxed mb-4">
+                    아이스커피는 더 이상 특정 시즌이나 일부 매니아의 선택이 아닙니다.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Stat Card 1 -->
+                    <div class="glass-card rounded-2xl p-4 border-l-4 border-l-ice-400 flex items-center justify-between">
+                        <div>
+                            <p class="text-[11px] text-coffee-300 uppercase font-semibold">영국 소비자 설문</p>
+                            <h3 class="text-base font-bold text-white mt-0.5">영국인 3명 중 1명</h3>
+                            <p class="text-xs text-coffee-200/80">"평소 아이스커피를 즐긴다"</p>
+                        </div>
+                        <div class="text-3xl font-black text-ice-400 bg-ice-600/10 px-3 py-2 rounded-xl border border-ice-500/20">
+                            32%
+                        </div>
+                    </div>
+
+                    <!-- Stat Card 2 -->
+                    <div class="glass-card rounded-2xl p-4 border-l-4 border-l-coffee-400 flex items-center justify-between">
+                        <div>
+                            <p class="text-[11px] text-coffee-300 uppercase font-semibold">연령층 외연 확장</p>
+                            <h3 class="text-base font-bold text-white mt-0.5">55세 이상 구매 증가</h3>
+                            <p class="text-xs text-coffee-200/80">시니어 층까지 확산된 트렌드</p>
+                        </div>
+                        <div class="text-2xl font-black text-coffee-200 bg-coffee-800/40 px-3 py-2 rounded-xl border border-coffee-600/30">
+                            55+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner -->
+                <div class="glass-card-light rounded-xl p-3.5 mt-3 border border-white/10 flex items-center gap-3">
+                    <i class="fa-solid fa-stroopwafel text-ice-400 text-xl"></i>
+                    <div>
+                        <p class="text-xs font-bold text-white">다양해지는 커스텀 옵션</p>
+                        <p class="text-[11px] text-coffee-300/80">시럽·과일향은 물론 단백질(프로틴) 첨가까지, 메뉴 스펙트럼이 급격히 넓어지고 있습니다.</p>
+                    </div>
+                </div>
+                <p class="text-[10px] text-coffee-400 text-right mt-1">* 출처: 닐슨아이큐(NIQ) '2027 음료 시장 보고서'</p>
+            </section>
+
+            <hr class="border-coffee-800/60 my-6"/>
+
+            <!-- ==================== SECTION 03 ==================== -->
+            <section id="sec-3" class="relative z-10">
+                <div class="flex items-center gap-2 text-xs font-semibold text-ice-400 uppercase tracking-widest mb-1.5">
+                    <span class="w-6 h-6 rounded-full bg-ice-600/20 flex items-center justify-center border border-ice-500/30">03</span>
+                    왜 갑자기?
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-4">
+                    젊은 취향 + SNS + <span class="text-amber-300">더워진 유럽</span>
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <!-- Driver 1 -->
+                    <div class="glass-card rounded-2xl p-4 border border-coffee-700/50 flex flex-col justify-between">
+                        <div>
+                            <div class="w-7 h-7 rounded-lg bg-coffee-800 text-coffee-100 font-bold flex items-center justify-center text-xs mb-2">①</div>
+                            <h3 class="text-xs font-bold text-white mb-1">취향대로 조합</h3>
+                            <p class="text-[11px] text-coffee-300/80 leading-relaxed">
+                                젊은 세대는 새로운 레시피를 시도하는 데 주저함이 없으며, 퍼스널 라이즈 음료를 선호합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Driver 2 -->
+                    <div class="glass-card rounded-2xl p-4 border border-coffee-700/50 flex flex-col justify-between">
+                        <div>
+                            <div class="w-7 h-7 rounded-lg bg-coffee-800 text-coffee-100 font-bold flex items-center justify-center text-xs mb-2">②</div>
+                            <h3 class="text-xs font-bold text-white mb-1">SNS에 잘 보이는 음료</h3>
+                            <p class="text-[11px] text-coffee-300/80 leading-relaxed">
+                                얼음과 우유, 에스프레소가 이루는 뚜렷한 색감과 비주얼이 소셜 미디어를 통해 빠르게 확산되었습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Driver 3 -->
+                    <div class="glass-card rounded-2xl p-4 border border-coffee-700/50 flex flex-col justify-between">
+                        <div>
+                            <div class="w-7 h-7 rounded-lg bg-amber-900/50 text-amber-300 font-bold flex items-center justify-center text-xs mb-2 border border-amber-500/30">③</div>
+                            <h3 class="text-xs font-bold text-white mb-1">점점 더워지는 유럽</h3>
+                            <p class="text-[11px] text-coffee-300/80 leading-relaxed">
+                                올해 여름 서유럽은 관측 이래 가장 뜨거운 여름을 보내며 물리적 차가운 음료 수요가 급증했습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-coffee-800/60 my-6"/>
+
+            <!-- ==================== SECTION 04 ==================== -->
+            <section id="sec-4" class="relative z-10">
+                <div class="flex items-center gap-2 text-xs font-semibold text-ice-400 uppercase tracking-widest mb-1.5">
+                    <span class="w-6 h-6 rounded-full bg-ice-600/20 flex items-center justify-center border border-ice-500/30">04</span>
+                    한국은 이미 사계절 ICE
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-1">
+                    한겨울에도 <span class="text-ice-300">10잔 중 6잔은 아이스</span>
+                </h2>
+                <p class="text-xs sm:text-sm text-coffee-300/90 mb-4">
+                    유럽에선 새로운 트렌드지만, 한국에선 이미 계절을 타지 않는 문화적 일상입니다.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Winter Stat -->
+                    <div class="glass-card rounded-2xl p-4 border border-ice-500/30 flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl bg-ice-600/20 flex flex-col items-center justify-center text-ice-300 flex-none border border-ice-500/30">
+                            <i class="fa-solid fa-snowflake text-lg mb-1"></i>
+                            <span class="text-[10px] font-bold">WINTER</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-extrabold text-white">60%</span>
+                            <p class="text-xs font-semibold text-coffee-200 mt-0.5">한겨울 아이스커피 판매 비중</p>
+                            <p class="text-[10px] text-coffee-300/70">두꺼운 패딩을 입고도 아이스를 선택</p>
+                        </div>
+                    </div>
+
+                    <!-- Summer Stat -->
+                    <div class="glass-card rounded-2xl p-4 border border-amber-500/30 flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl bg-amber-600/20 flex flex-col items-center justify-center text-amber-300 flex-none border border-amber-500/30">
+                            <i class="fa-solid fa-sun text-lg mb-1"></i>
+                            <span class="text-[10px] font-bold">SUMMER</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-extrabold text-amber-400">97%</span>
+                            <p class="text-xs font-semibold text-coffee-200 mt-0.5">대서(大暑) 절기 아이스 비중</p>
+                            <p class="text-[10px] text-coffee-300/70">사실상 전 국민의 압도적 선택</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-[10px] text-coffee-400 text-right mt-2">* 출처: 메가MGC커피 (전국 약 4000개 매장, 4억 건 주문 분석)</p>
+            </section>
+
+            <hr class="border-coffee-800/60 my-6"/>
+
+            <!-- ==================== SECTION 05 ==================== -->
+            <section id="sec-5" class="relative z-10 pb-4">
+                <div class="flex items-center gap-2 text-xs font-semibold text-ice-400 uppercase tracking-widest mb-1.5">
+                    <span class="w-6 h-6 rounded-full bg-ice-600/20 flex items-center justify-center border border-ice-500/30">05</span>
+                    커피 공식이 바뀐다
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                    뜨거운 커피의 본고장에도 <span class="text-transparent bg-clip-text bg-gradient-to-r from-ice-300 to-amber-200">'ICE'가 일상</span>이 됐다
+                </h2>
+
+                <div class="glass-card rounded-2xl p-5 border border-coffee-500/40 bg-gradient-to-r from-coffee-900/90 to-coffee-950/90 shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="px-2.5 py-1 rounded-md bg-ice-600 text-white font-extrabold text-xs">얼죽아</span>
+                        <span class="text-xs font-bold text-coffee-100">'얼어 죽어도 아이스 아메리카노'</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-coffee-200/90 leading-relaxed">
+                        한국에서 시작된 이 소비 문화가 이제 유럽의 커피 지형 변화와 맞물리고 있습니다. 
+                        기후 변화와 세대별 취향의 결합으로, 아이스커피는 단순한 여름철 특수 메뉴를 넘어 글로벌 커피 문화의 새로운 표준으로 확고히 자리 잡았습니다.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="flex-none px-6 py-3 border-t border-coffee-800/80 bg-coffee-950 text-[11px] text-coffee-400 flex justify-between items-center z-30">
+            <span>Global Coffee Trend Analysis Report</span>
+            <span class="text-ice-400 font-medium">Scroll Continuous View</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>
